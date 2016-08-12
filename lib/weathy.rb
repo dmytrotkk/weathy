@@ -22,10 +22,11 @@ module Weathy
       if check_api_key
         res = Requests.request_weather_by_city(city,state)
         puts res
-        res
+        @res = res.parsed_response
       else
-        puts 'Please, set up api key by typing "Weathy.set_api_key(your_api_key)" '
+        @res = 'Please, set up api key by typing "Weathy.set_api_key(your_api_key)" '
       end
+      @res
     end
 
   end
